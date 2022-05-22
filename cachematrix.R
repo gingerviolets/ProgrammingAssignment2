@@ -4,15 +4,15 @@
 ## makeCacheMatrix : sets & gets elements of given matrix of x, then its
 ## inverse to be called
 
-makeCacheMatrix <- function(x = matrix()) { # nolint
+makeCacheMatrix <- function(x = matrix()) { 
         inverted <- NULL
         set <- function(y) {
                 x <<- y
                 inverted <<- NULL
         }
         get <- function() x
-        setinverse <- function(inverse) inverted <<- inverse # nolint # nolint
-        getinverse <- function() inverted # nolint
+        setinverse <- function(inverse) inverted <<- inverse 
+        getinverse <- function() inverted 
         list(get = get, set = set,
             setinverse = setinverse,
             getinverse = getinverse)
@@ -21,7 +21,7 @@ makeCacheMatrix <- function(x = matrix()) { # nolint
 ## cacheSolve: 1) checks for existing cached data for inverted; returns inverted
 ## 2) else, calculates inverse of matrix as inverted; returns inverted
 
-cacheSolve <- function(x, ...) { # nolint
+cacheSolve <- function(x, ...) { 
         inverted <- x$getinverse()
         if(!is.null(inverted)) {
         message("getting cached data")
